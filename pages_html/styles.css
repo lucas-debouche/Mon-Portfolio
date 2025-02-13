@@ -80,3 +80,33 @@ section {
 .project a:hover {
     background: #555;
 }
+
+/* Styles pour l'en-tête des pages projets */
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #333;
+    padding: 1.5em;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-header h1 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
+
+.back-button {
+    background: #444;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #666;
+}
