@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ingénieur Informatique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Mon Portfolio</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="about">
+    <div class="about-container">
+        <img src="./images/photo_profil.jpg" alt="Photo de moi" class="about-image">
+        <a href="https://github.com/lucas-debouche" target="_blank">
+        <img src="./images/GitHub-Logo.jpg" alt="GitHub" class="about-github">
+        </a>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="section-title"><h2>Mes Projets</h2></div>
+    <div class="projets-container">
+
+        <!-- Projet 1 -->
+        <div class="projet-card">
+            <div class="projet-default">
+                <h3>Schotten Totten</h3>
+                <p>Un jeu de cartes stratégique avec IA.</p>
+                <img src="images/schotten_totten/schotten_totten.jpg" alt="Schotten Totten">
+            </div>
+            <div class="projet-hover">
+                <div class="content">
+                    <div class="projet-title"><h3>Schotten Totten</h3></div>
+                    <div class="top">
+                        <p>Ce projet vise à créer une version numérique d’un jeu de cartes avec une intelligence
+                            artificielle capable de rivaliser avec un joueur humain. L’objectif était de modéliser
+                            fidèlement les règles, développer une IA stratégique avec Q-Learning et concevoir une
+                            interface intuitive avec Pygame pour une expérience fluide. On a rencontré plusieurs défis,
+                            comme la gestion du temps et la complexité des algorithmes, mais l’IA progresse en apprenant
+                            de ses erreurs. Bien que le jeu soit fonctionnel, il reste des améliorations à apporter,
+                            notamment sur l’optimisation des performances et l’affinement des stratégies de
+                            l’IA.</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="bottom-left">
+                            <div class="carousel-container">
+                                <button class="prev">&lt;</button>
+                                <div class="carousel">
+                                    <img src="images/schotten_totten/menu.jpg" alt="Image 1" class="carousel-img">
+                                    <img src="images/schotten_totten/jeu.jpg" alt="Image 2" class="carousel-img">
+                                    <img src="images/schotten_totten/machine_etat.jpg" alt="Image 3"
+                                         class="carousel-img">
+                                    <img src="images/schotten_totten/action_ia.jpg" alt="Image 4" class="carousel-img">
+                                    <img src="images/schotten_totten/replay.jpg" alt="Image 5" class="carousel-img">
+                                </div>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="bottom-right">
+                            <h4>Points à améliorer :</h4>
+                            <ul>
+                                <li>Implémentation complète des règles du jeu</li>
+                                <li>Optimisation de l'IA pour les modes tactique et expert</li>
+                                <li>Simulation des parties pour affiner l’IA</li>
+                                <li>Réduction du temps de simulation pour accélérer l’apprentissage</li>
+                                <li>Améliorations graphiques et ergonomiques pour une meilleure immersion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 2 -->
+        <div class="projet-card">
+            <div class="projet-default">
+                <h3>Turing Machine</h3>
+                <p>Un jeu de réflexion basé sur la logique.</p>
+                <img src="images/turing_machine/logo.jpg" alt="Turing Machine">
+            </div>
+            <div class="projet-hover">
+                <div class="content">
+                    <div class="projet-title"><h3>Turing Machine</h3></div>
+                    <div class="top">
+                        <p>Ce projet consiste à développer une version numérique du jeu "Turing Machine", un jeu de
+                            logique et de déduction, en l’adaptant à un contexte universitaire. L’objectif était de
+                            modéliser les règles du jeu, concevoir une interface intuitive en Java et implémenter un
+                            système de vérification logique permettant de deviner une salle de cours à partir d’indices.
+                            L’équipe a dû relever plusieurs défis, notamment la gestion de l’interface et l’intégration
+                            des différentes classes. Bien que le projet soit fonctionnel, des améliorations restent
+                            possibles sur l’optimisation du code et l’ergonomie de l’application.</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="bottom-left">
+                            <div class="carousel-container">
+                                <button class="prev">&lt;</button>
+                                <div class="carousel">
+                                    <img src="images/turing_machine/menu.jpg" alt="Image 1" class="carousel-img">
+                                    <img src="images/turing_machine/jeu.jpg" alt="Image 2" class="carousel-img">
+                                    <img src="images/turing_machine/DiagrammeCasUtilisation.jpg" alt="Image 3"
+                                         class="carousel-img">
+                                    <img src="images/turing_machine/DiagrammeClasse.jpg" alt="Image 4"
+                                         class="carousel-img">
+                                    <img src="images/turing_machine/DiagrammeSéquence.jpg" alt="Image 5"
+                                         class="carousel-img">
+                                    <img src="images/turing_machine/code.jpg" alt="Image 6" class="carousel-img">
+                                </div>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="bottom-right">
+                            <h4>Points à améliorer :</h4>
+                            <ul>
+                                <li>Affiner les règles du jeu pour plus de fidélité</li>
+                                <li>Optimiser l’algorithme de vérification pour plus de rapidité</li>
+                                <li>Améliorer l’interface utilisateur pour une meilleure ergonomie</li>
+                                <li>Ajouter des tests automatisés pour plus de stabilité</li>
+                                <li>Intégrer des critères avancés pour enrichir le gameplay</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 3 -->
+        <div class="projet-card">
+            <div class="projet-default">
+                <h3>Solar Panel Sun Tracker</h3>
+                <p>Une maquette de panneau solaire intelligent.</p>
+                <img src="images/solar_panel/modelise3d.jpg" alt="Solar Panel">
+            </div>
+            <div class="projet-hover">
+                <div class="content">
+                    <div class="projet-title"><h3>Solar Panel Sun Tracker</h3></div>
+                    <div class="top">
+                        <p>Ce projet vise à concevoir un panneau solaire à suivi automatique capable d’optimiser la
+                            production d’énergie en s’orientant en fonction de la position du soleil. Il utilise des
+                            capteurs de luminosité (luxmètre, photorésistances) pour ajuster son inclinaison sur deux
+                            axes. L’équipe a réparti les tâches entre la conception hardware, software et serveur
+                            NodeRed. Pour la modélisation et le prototypage, Fusion360, Arduino IDE et Tinkercad ont été
+                            utilisés. Malgré des défis liés à l’impression 3D, des ajustements ont permis de respecter
+                            les contraintes de fabrication.</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="bottom-left">
+                            <div class="carousel-container">
+                                <button class="prev">&lt;</button>
+                                <div class="carousel">
+                                    <img src="images/solar_panel/schema.jpg" alt="Image 1" class="carousel-img">
+                                    <img src="images/solar_panel/modelise3d.jpg" alt="Image 2" class="carousel-img">
+                                    <img src="images/solar_panel/maquette_reel.jpg" alt="Image 3" class="carousel-img">
+                                    <img src="images/solar_panel/nodered.jpg" alt="Image 4" class="carousel-img">
+                                    <img src="images/solar_panel/dashboard.jpg" alt="Image 5" class="carousel-img">
+                                    <img src="images/solar_panel/tinkercas.jpg" alt="Image 6" class="carousel-img">
+                                </div>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="bottom-right">
+                            <h4>Points à améliorer :</h4>
+                            <ul>
+                                <li>Optimiser le suivi du soleil pour une meilleure précision des mouvements</li>
+                                <li>Améliorer l’efficacité énergétique des moteurs et capteurs</li>
+                                <li>Renforcer la résistance de la maquette avec des matériaux plus solides</li>
+                                <li>Améliorer la gestion des intempéries pour protéger le panneau solaire</li>
+                                <li>Tester en conditions réelles pour valider la fiabilité du système</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 4 -->
+        <div class="projet-card">
+            <div class="projet-default">
+                <h3>Simulateur IoT - Qualité de l'air</h3>
+                <p>Surveillance environnementale avec des capteurs.</p>
+            </div>
+            <div class="projet-hover">
+                <div class="content">
+                    <div class="projet-title"><h3>Simulateur IoT</h3></div>
+                    <div class="top">
+                        <p>Ce projet consiste à développer un simulateur IoT en C++, destiné au suivi en temps réel des
+                            paramètres environnementaux tels que la température, le son, la lumière et l'humidité dans
+                            un environnement de travail. L’application utilise des concepts clés de la programmation
+                            orientée objet comme l’héritage, le polymorphisme et l’abstraction, pour générer, envoyer et
+                            stocker des données issues de différents capteurs dans des fichiers CSV.</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="bottom-left">
+                            <div class="carousel-container">
+                                <button class="prev">&lt;</button>
+                                <div class="carousel">
+                                    <img src="images/simulateur_iot/UML.jpg" alt="Image 1" class="carousel-img">
+                                    <img src="images/simulateur_iot/console.jpg" alt="Image 2" class="carousel-img">
+                                    <img src="images/simulateur_iot/CSV.jpg" alt="Image 3" class="carousel-img">
+                                </div>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="bottom-right">
+                            <h4>Points à améliorer :</h4>
+                            <ul>
+                                <li>Intégrer une interface graphique pour faciliter l’affichage des données</li>
+                                <li>Optimiser la gestion des fichiers CSV pour améliorer les performances</li>
+                                <li>Mettre en place des tests unitaires pour assurer la robustesse des fonctions
+                                    critiques
+                                </li>
+                                <li>Ajouter des commentaires plus détaillés dans le code pour faciliter la maintenance
+                                </li>
+                                <li>Développer une gestion avancée des erreurs pour une meilleure fiabilité</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 5 -->
+        <!--
+        <div class="projet-card">
+            <div class="projet-default">
+                <h3>Rsync</h3>
+                <p>Un mini-jeu interactif basé sur l'algorithme Rsync.</p>
+                <img src="images/turing_machine/logo.jpg" alt="Turing Machine">
+            </div>
+            <div class="projet-hover">
+                <div class="content">
+                    <div class="projet-title"><h3>Rsync</h3></div>
+                    <div class="top">
+                        <p>Le projet vise à créer en langage C un outil proche de rsync, intégrant des notions avancées
+                            comme le multiprocessus. L'objectif était d'appliquer les connaissances acquises durant les
+                            cours, TD et TP, en particulier concernant le C système. Ce travail a permis de renforcer
+                            les compétences techniques en programmation C et de mieux appréhender les exigences liées au
+                            développement logiciel en équipe. Malgré quelques difficultés techniques, cette expérience a
+                            été enrichissante en termes d'organisation et de collaboration.</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="bottom-left">
+                            <div class="carousel-container">
+                                <button class="prev">&lt;</button>
+                                <div class="carousel">
+                                    <img src="images/turing_machine/menu.jpg" alt="Image 1" class="carousel-img">
+                                    <img src="images/turing_machine/jeu.jpg" alt="Image 2" class="carousel-img">
+                                    <img src="images/turing_machine/DiagrammeCasUtilisation.jpg" alt="Image 3"
+                                         class="carousel-img">
+                                    <img src="images/turing_machine/DiagrammeClasse.jpg" alt="Image 4"
+                                         class="carousel-img">
+                                    <img src="images/turing_machine/DiagrammeSéquence.jpg" alt="Image 5"
+                                         class="carousel-img">
+                                    <img src="images/turing_machine/code.jpg" alt="Image 6" class="carousel-img">
+                                </div>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="bottom-right">
+                            <h4>Points à améliorer :</h4>
+                            <ul>
+                                <li>Compiler régulièrement pour éviter l'accumulation d'erreurs</li>
+                                <li>Approfondir les concepts complexes comme le multiprocessus dès le début du projet
+                                </li>
+                                <li>Clarifier les consignes techniques pour éviter les incompréhensions</li>
+                                <li>Tester le code sur une machine Linux tout au long du projet</li>
+                                <li>Ajouter des commentaires précis dans chaque fonction</li>
+                                <li>Planifier des tests unitaires fréquents pour chaque module développé</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email : lucas.debouche@gmail.com</p>
+    <p>LinkTree : <a href="https://linktr.ee/lucas.debouche" target="_blank">linktr.ee/lucas.debouche</a></p>
+    <p>Site web créé par Lucas DEBOUCHE</p>
+</section>
+
+<script src="script.js"></script>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" src="" alt="Image agrandie">
+</div>
+
+</body>
+</html>
