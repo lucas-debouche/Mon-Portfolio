@@ -1,7 +1,3 @@
-*{
-    pointer-events: none;
-}
-
 /* Styles généraux */
 body {
     font-family: 'Poppins', sans-serif;
@@ -78,6 +74,8 @@ nav ul li a:hover {
 .about-image{
     display: block;
     width: 100%; /* Ajuste à la largeur désirée */
+    pointer-events: none;
+    user-select: none;
 }
 
 .about-github{
