@@ -1,3 +1,7 @@
+*{
+    pointer-events: none;
+}
+
 /* Styles généraux */
 body {
     font-family: 'Poppins', sans-serif;
