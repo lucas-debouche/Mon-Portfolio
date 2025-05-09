@@ -52,19 +52,25 @@
 
 .about-header h2 {
     font-size: 2rem;
-    color: var(--accent, #00bfa6);
     font-weight: 800;
     margin: 0;
     letter-spacing: 0.01em;
-    background: linear-gradient(90deg, var(--accent, #00bfa6) 60%, #00cfff 100%);
+    /* Dégradé animé comme le header */
+    background: linear-gradient(
+            270deg,
+            #00bfa6, #00cfff, #a259ff, #ff6ec4, #ffb86c, #00bfa6
+    );
+    background-size: 1200% 1200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradient-move 6s linear infinite;
+    transition: color 0.3s;
 }
 
 .about-github {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: contain;
     display: block;

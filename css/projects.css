@@ -351,7 +351,6 @@ body.projet-expanded .projets-container > .projet-card.expanded {
 }
 .projet-overlay.active {
     opacity: 1;
-    pointer-events: auto;
 }
 
 /* Masquer le header uniquement visuellement, mais garder sa place pour éviter le décalage du contenu */
@@ -407,18 +406,32 @@ body.projet-expanded {
     cursor: pointer;
     border-radius: 50%;
     z-index: 10;
-    opacity: 0.5;
+    opacity: 0;
+    /* Masqué par défaut */
     box-shadow: 0 0 8px #00bfa680;
     transition: background 0.2s, color 0.2s, opacity 0.2s, box-shadow 0.2s;
     outline: none;
     font-size: 2rem;
     width: 48px;
     height: 48px;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.carousel-container:hover button,
-.carousel-container button:focus {
+/* Affiche le bouton uniquement au hover/focus-visible */
+.carousel-container button:hover,
+.carousel-container button:focus-visible {
     opacity: 1;
+    background: var(--bg-container, #1e293b);
+    color: var(--accent, #00bfa6);
+    box-shadow: 0 0 16px #00bfa6b0;
+}
+
+/* Supprime l'affichage automatique sur hover du container */
+.carousel-container:hover button {
+    /* plus rien ici, tout est géré ci-dessus */
 }
 
 .carousel-container .prev {
@@ -427,13 +440,6 @@ body.projet-expanded {
 
 .carousel-container .next {
     right: 10px;
-}
-
-.carousel-container button:hover,
-.carousel-container button:focus {
-    background: var(--bg-container, #1e293b);
-    color: var(--accent, #00bfa6);
-    box-shadow: 0 0 16px #00bfa6b0;
 }
 
 /* Lightbox styles */
