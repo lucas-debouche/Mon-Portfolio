@@ -1,0 +1,124 @@
+#contact {
+    background: var(--bg-main, #0f172a);
+    color: var(--text-main, #f1f5f9);
+    padding: 48px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 4vw;
+    box-sizing: border-box;
+}
+
+.contact-form-section,
+.contact-social-section {
+    flex: 1;
+    background: linear-gradient(120deg, rgba(15,23,42,0.92) 60%, rgba(0,191,166,0.08) 100%);
+    border-radius: 18px;
+    box-shadow: 0 8px 40px 0 rgba(0,191,166,0.13), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+    padding: 24px;
+}
+
+.contact-title,
+.social-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent, #00bfa6);
+}
+
+.contact-description,
+.social-description {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    color: var(--text-main, #f1f5f9);
+}
+
+.contact-form .form-group {
+    margin-bottom: 16px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--text-main, #f1f5f9);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid var(--accent, #00bfa6);
+    border-radius: 6px;
+    background: var(--bg-main, #0f172a);
+    color: var(--text-main, #f1f5f9);
+    font-size: 1rem;
+}
+
+.contact-form button {
+    display: inline-block;
+    background: var(--accent, #00bfa6);
+    color: var(--bg-main, #0f172a);
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #00a18a;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-main, #0f172a);
+    border-radius: 50%;
+    border: 2px solid var(--accent, #00bfa6);
+    color: var(--accent, #00bfa6);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--accent, #00bfa6);
+    color: var(--bg-main, #0f172a);
+    transform: scale(1.1);
+}
+
+.social-links a[aria-label="LinkedIn"] img {
+    width: 65%; /* Applique une réduction spécifique uniquement pour LinkedIn */
+}
+
+.social-links a[aria-label="LinkTree"] img {
+    width: 80%; /* Applique une réduction spécifique uniquement pour LinkedIn */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+}

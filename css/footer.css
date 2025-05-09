@@ -1,0 +1,62 @@
+footer {
+    background: var(--bg-container, #1e293b);
+    padding: 32px 0;
+    border-top: 1px solid rgba(0, 191, 166, 0.2);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-container p {
+    color: var(--text-muted, #94a3b8);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    color: var(--accent, #00bfa6);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Effet de surlignage au survol */
+.footer-container p:hover {
+    color: var(--text-main, #f1f5f9);
+}
+
+/* Animation subtile du séparateur */
+footer::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent, #00bfa6), transparent);
+    margin-bottom: 32px;
+    opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 24px 0;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

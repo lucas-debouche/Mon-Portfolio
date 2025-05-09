@@ -1,0 +1,179 @@
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--bg-container, #1e293b);
+    color: var(--text-main, #f1f5f9);
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    transition: background 0.3s;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 4vw;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.04em;
+    /* Animation dégradé arc-en-ciel défilant */
+    background: linear-gradient(
+        270deg,
+        #00bfa6, #00cfff, #a259ff, #ff6ec4, #ffb86c, #00bfa6
+    );
+    background-size: 1200% 1200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-move 6s linear infinite;
+    transition: color 0.3s;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+nav {
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-main, #f1f5f9);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 24px;
+    border-radius: 18px;
+    background: rgba(0,191,166,0.08);
+    border: 1.5px solid transparent;
+    transition: 
+        background 0.25s, 
+        color 0.25s, 
+        border 0.25s, 
+        box-shadow 0.25s,
+        transform 0.18s cubic-bezier(.4,1.6,.6,1);
+    box-shadow: 0 2px 8px 0 rgba(0,191,166,0.05);
+    letter-spacing: 0.02em;
+    outline: none;
+    display: inline-block;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: var(--accent, #00bfa6);
+    color: var(--bg-container, #1e293b);
+    border: 1.5px solid var(--text-main, #f1f5f9);
+    box-shadow: 0 0 12px #00bfa680;
+    transform: translateY(-2px) scale(1.06);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--accent, #00bfa6);
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: 18px;
+    transition: color 0.2s;
+}
+
+.menu-toggle:focus {
+    outline: 2px solid var(--accent, #00bfa6);
+}
+
+@media (max-width: 900px) {
+    .header-container {
+        flex-direction: row;
+        padding: 14px 3vw;
+    }
+    nav ul {
+        gap: 12px;
+    }
+    header h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .header-container {
+        flex-direction: row;
+        padding: 10px 2vw;
+    }
+    nav {
+        position: static;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--bg-container, #1e293b);
+        width: 180px;
+        min-width: 140px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 8px 32px 0 rgba(0,191,166,0.10);
+        padding: 10px 0;
+        gap: 0;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.25s, transform 0.25s;
+        z-index: 200;
+    }
+    nav ul.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    nav ul li {
+        width: 100%;
+        text-align: right;
+    }
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 12px 24px;
+        border-radius: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        font-size: 1rem;
+        transition: background 0.2s, color 0.2s;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background: var(--accent, #00bfa6);
+        color: var(--bg-container, #1e293b);
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        transform: none;
+    }
+}
+
+body.projet-expanded header {
+    display: none;
+}
