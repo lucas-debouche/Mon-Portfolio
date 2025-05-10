@@ -1,15 +1,25 @@
-document.querySelector(".contact-form").addEventListener("submit", function (event) {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    if (!name || !email || !message) {
-        alert("Tous les champs doivent être remplis.");
-        event.preventDefault(); // Empêche l'envoi du formulaire si des champs sont manquants
-    }
+    const serviceID = "service_z6chca6"; // Obtenez du tableau EmailJS
+    const templateID = "template_6j4v41m"; // Obtenez du tableau EmailJS
 
-    if (!/\S+@\S+\.\S+/.test(email)) {
-        alert("Veuillez fournir une adresse e-mail valide.");
-        event.preventDefault();
-    }
+    // Envoi de l'email via EmailJS
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            // Message de succès
+            const formResponse = document.getElementById("form-response");
+            formResponse.style.color = "green";
+            formResponse.innerText = "Votre message a été envoyé avec succès !";
+
+            // Réinitialiser le formulaire
+            document.getElementById("contact-form").reset();
+        })
+        .catch((err) => {
+            // Message d'erreur
+            const formResponse = document.getElementById("form-response");
+            formResponse.style.color = "red";
+            formResponse.innerText = "Une erreur s'est produite. Veuillez réessayer plus tard.";
+            console.error("EmailJS Error : ", err);
+        });
 });

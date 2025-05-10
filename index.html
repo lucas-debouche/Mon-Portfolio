@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Balises de base -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio – Lucas Debouche, Ingénieur Informatique</title>
-    <meta name="description"
-          content="Portfolio de Lucas Debouche, ingénieur informatique : projets, compétences, contact.">
-    <meta property="og:title" content="Portfolio – Lucas Debouche, Ingénieur Informatique">
-    <meta property="og:description"
-          content="Découvrez les projets, compétences et contact de Lucas Debouche, ingénieur informatique.">
+    <title>Lucas Debouche | Portfolio</title>
+    <meta name="description" content="Découvrez le portfolio de Lucas Debouche, étudiant en ingénierie informatique passionné par le développement logiciel et l'IA. Explorez ses projets, compétences et méthodes de travail.">
+    <meta name="keywords" content="Lucas Debouche, Lucas Debouche portfolio, étudiant en ingénierie informatique, développement logiciel, IA, projets Lucas Debouche, compétences informatiques, contact Lucas Debouche">
+
+    <!-- Balises Open Graph pour le partage social -->
+    <meta property="og:title" content="Lucas Debouche | Étudiant en ingénierie informatique et Portfolio professionnel">
+    <meta property="og:description" content="Explorez le portfolio de Lucas Debouche, ses projets logiciels et ses compétences en ingénierie informatique.">
     <meta property="og:image" content="images/photo_profil.jpg">
+    <meta property="og:url" content="https://votre-site.com">
+    <meta property="og:type" content="website">
     <meta name="theme-color" content="#0f172a">
+
+    <!-- Favicon -->
     <link rel="icon" href="images/photo_profil.jpg" type="image/jpeg">
-    <!-- Modular CSS -->
+
+    <!-- Fichiers CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/about.css">
@@ -20,7 +27,26 @@
     <link rel="stylesheet" href="css/stats.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Données structurées JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://lucas-debouche.github.io/Mon-Portfolio/",
+            "@type": "Person",
+            "name": "Lucas Debouche",
+            "jobTitle": "Étudiant en ingénierie Informatique",
+            "url": "https://lucas-debouche.github.io/Mon-Portfolio/",
+            "sameAs": [
+                "https://github.com/lucas-debouche",
+                "https://www.linkedin.com/in/lucas-debouche-29a783256/",
+                "https://linktr.ee/lucas.debouche"
+            ],
+            "image": "https://https://lucas-debouche.github.io/Mon-Portfolio/images/photo_profil.jpg",
+            "description": "Lucas Debouche, étudiant en ingénierie informatique spécialisé dans le développement logiciel et l'IA. Découvrez ses projets et compétences."
+        }
+    </script>
 </head>
+
 <body>
 <header>
     <div class="header-container">
@@ -41,15 +67,13 @@
     <div class="projet-overlay"></div>
     <section id="about">
         <div class="about-container">
-            <img src="images/photo_profil.jpg" alt="Portrait de Lucas Debouche" class="about-image" width="160"
-                 height="160" loading="lazy">
+            <img src="images/photo_profil.jpg" alt="Portrait de Lucas Debouche" class="about-image" loading="lazy">
             <div class="about-main">
                 <div class="about-header">
                     <h2>À propos</h2>
                     <a href="https://github.com/lucas-debouche" target="_blank" rel="noopener"
                        aria-label="Profil GitHub de Lucas Debouche">
-                        <img src="images/reseaux/GitHub-Logo.jpg" alt="Logo GitHub" class="about-github" width="48"
-                             height="48" loading="lazy">
+                        <img src="images/reseaux/GitHub-Logo.jpg" alt="Logo GitHub" class="about-github" loading="lazy">
                     </a>
                 </div>
                 <div class="about-text">
@@ -59,6 +83,7 @@
                     </p>
                 </div>
             </div>
+        </div>
     </section>
 
     <section id="projects">
@@ -376,7 +401,7 @@
                 <h2 class="contact-title">Entrons en contact</h2>
                 <p class="contact-description">Une question, une collaboration ou simplement envie de dire bonjour ?
                     Remplissez le formulaire ci-dessous.</p>
-                <form class="contact-form" action="send_email.php" method="POST">
+                <form class="contact-form" id="contact-form">
                     <div class="form-group">
                         <label for="name">Nom</label>
                         <input type="text" id="name" name="name" placeholder="Votre nom" required>
@@ -431,5 +456,10 @@
 <script src="js/lightbox.js"></script>
 <script src="js/scroll.js"></script>
 <script src="js/projects-expand.js"></script>
+<script src="js/send_email.js"></script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+   emailjs.init("jh26E_Usf7_zy0J5D");
+</script>
 </body>
 </html>
