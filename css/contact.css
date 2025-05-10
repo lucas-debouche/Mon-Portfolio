@@ -115,6 +115,10 @@
     width: 80%; /* Applique une réduction spécifique uniquement pour LinkedIn */
 }
 
+.social-links a[aria-label="Mon CV"] img {
+    width: 80%; /* Icône du CV légèrement réduite si nécessaire */
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .contact-container {
