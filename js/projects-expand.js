@@ -1,47 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const overlay = document.querySelector('.projet-overlay') || document.createElement('div');
-    overlay.className = 'projet-overlay';
-    document.body.appendChild(overlay);
+    let overlay = document.querySelector(".projet-overlay");
+    if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.className = "projet-overlay";
+        document.body.appendChild(overlay);
+    }
 
     const cards = Array.from(document.querySelectorAll(".projet-card"));
     let expandedCard = null;
+    let scrollY = 0;
+    let isLocked = false;
+
+    function lockScroll() {
+        if (isLocked) return;
+        scrollY = window.scrollY || window.pageYOffset;
+        document.documentElement.classList.add("projet-expanded");
+        document.body.classList.add("projet-expanded");
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+        isLocked = true;
+    }
+
+    function unlockScroll() {
+        if (!isLocked) return;
+        document.documentElement.classList.remove("projet-expanded");
+        document.body.classList.remove("projet-expanded");
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollY);
+        isLocked = false;
+    }
 
     function expandCard(card) {
         if (expandedCard === card) return;
 
-        collapseCard(); // Replier la carte précédemment agrandie, si existante
-        card.classList.add("expanded"); // Ajoute la classe pour agrandir
-        card.setAttribute("aria-expanded", "true"); // Marquer comme agrandie pour les lecteurs d’écran/accessibilité
-        document.body.classList.add("projet-expanded");
+        collapseCard();
+        card.classList.add("expanded");
+        card.setAttribute("aria-expanded", "true");
+        lockScroll();
+        overlay.classList.add("active");
         expandedCard = card;
 
         const closeBtn = card.querySelector(".projet-close-btn");
         if (closeBtn) closeBtn.focus();
-
-        // Centrer la carte dans la vue (facultatif)
-        setTimeout(() => {
-            card.scrollIntoView({ behavior: "smooth", block: "center" });
-        }, 100);
     }
 
     function collapseCard() {
         if (expandedCard) {
             expandedCard.classList.remove("expanded");
             expandedCard.setAttribute("aria-expanded", "false");
-            expandedCard = null; // Réinitialiser la carte agrandie
+            expandedCard = null;
         }
-        document.body.classList.remove("projet-expanded");
+        unlockScroll();
+        overlay.classList.remove("active");
     }
 
-    // Ajouter événement "click" pour agrandir les cartes
-    cards.forEach(card => {
-        card.addEventListener("click", function () {
+    cards.forEach((card) => {
+        card.addEventListener("click", function (e) {
+            if (e.target.closest(".projet-close-btn")) return;
+            if (e.target.closest(".carousel-container")) return;
+            if (e.target.closest(".projet-github")) return;
             if (!card.classList.contains("expanded")) {
                 expandCard(card);
             }
         });
 
-        // Accessibilité : Détecter entrée ou espace pour agrandir
         card.addEventListener("keydown", function (e) {
             if ((e.key === "Enter" || e.key === " ") && !card.classList.contains("expanded")) {
                 e.preventDefault();
@@ -50,17 +75,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Ajout des événements pour les fermetures
     overlay.addEventListener("click", collapseCard);
 
-    document.querySelectorAll(".projet-close-btn").forEach(btn => {
+    document.querySelectorAll(".projet-close-btn").forEach((btn) => {
         btn.addEventListener("click", function (e) {
             e.stopPropagation();
             collapseCard();
         });
     });
 
-    // Événement clavier : "Escape" pour fermer
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && expandedCard) {
             collapseCard();
